@@ -1,0 +1,29 @@
+{
+  "name": "advent-of-code-2017",
+  "version": "0.1.0",
+  "description": "My Advent of Code 2017 solutions (JavaScript)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimf/advent-of-code-2017"
+  },
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "tape src/*/test.js"
+  },
+  "keywords": [],
+  "author": "Jim Fitzpatrick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimf/advent-of-code-2017/issues"
+  },
+  "homepage": "https://github.com/jimf/advent-of-code-2017",
+  "private": true,
+  "dependencies": {
+    "inquirer": "^4.0.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "tape": "^4.8.0"
+  }
+}
