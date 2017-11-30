@@ -15,3 +15,5 @@ Install using [npm][]:
 ## License
 
 MIT
+
+[npm]: https://www.npmjs.org/package/advent-of-code-2017
