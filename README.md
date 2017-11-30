@@ -1,6 +1,6 @@
 # advent-of-code-2017
 
-My Advent of Code 2017 solutions (JavaScript).
+My [Advent of Code 2017](https://adventofcode.com/2017) solutions (JavaScript).
 
 ## Installation
 
@@ -16,4 +16,4 @@ Install using [npm][]:
 
 MIT
 
-[npm]: https://www.npmjs.org/package/advent-of-code-2017
+[npm]: https://www.npmjs.org
