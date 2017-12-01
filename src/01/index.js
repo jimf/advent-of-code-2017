@@ -1,5 +1,6 @@
 const gen = require('../gen')
 const t = require('../transduce')
+const { head } = require('../util')
 
 /**
  * Day 1 - Inverse Captcha
@@ -34,11 +35,13 @@ const getInverseCaptcha = (getNext, input) => {
  * generation.
  */
 const getInverseCaptcha = (getNext, input) => {
-  const mapToPair = t.map(i => [i, getNext(i)])
-  const filterMatchingDigits = t.filter(([i, j]) => input[i] === input[j])
-  const mapToValue = t.map(([i, _]) => Number(input[i]))
-  const reducer = t.compose(mapToPair, filterMatchingDigits, mapToValue)
-  return t.sum(reducer, gen.take(input.length)(gen.numbers()))
+  const mapToPair = t.map(i => [Number(input[i]), Number(input[getNext(i)])])
+  const filterMatchingDigits = t.filter(([i, j]) => i === j)
+  const mapToValue = t.map(head)
+  return t.sum(
+    t.compose(mapToPair, filterMatchingDigits, mapToValue),
+    gen.take(input.length)(gen.numbers())
+  )
 }
 
 const getNext = {
