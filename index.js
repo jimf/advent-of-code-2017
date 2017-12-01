@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 const aocSolutions = {
-  '01p1': require('./src/01/p1')
+  '01': require('./src/01')
 }
 
 inquirer.prompt([
@@ -10,19 +10,24 @@ inquirer.prompt([
     message: 'Which solution would you like to run?',
     choices: [
       {
-        name: 'Day 1: PROBLEM NAME HERE',
+        name: 'Day 1 - Inverse Captcha',
         value: '01p1'
+      },
+      {
+        name: 'Day 1 - Inverse Captcha (part 2)',
+        value: '01p2'
       }
     ]
+  },
+  {
+    type: 'input',
+    name: 'input',
+    message: 'Puzzle input:'
   }
-]).then(({ run }) => {
-  const solve = aocSolutions[run]
-  return inquirer.prompt(solve.prompt).then(answers => {
+])
+  .then((answers) => {
+    const [day, part] = answers.run.split('p')
     console.log('Running solution...')
-    const args = Object.keys(answers).reduce((acc, key) => (
-      [...acc, answers[key]]
-    ), [])
-    console.log('> ', solve(...args))
+    console.log('> ', aocSolutions[day](Number(part), answers.input))
   })
-})
-.catch((err) => { console.error(err) })
+  .catch((err) => { console.error(err) })
