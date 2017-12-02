@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const aocSolutions = {
-  '01': require('./src/01')
+  '01': require('./src/01'),
+  '02': require('./src/02')
 }
 
 inquirer.prompt([
@@ -16,6 +17,10 @@ inquirer.prompt([
       {
         name: 'Day 1 - Inverse Captcha (part 2)',
         value: '01p2'
+      },
+      {
+        name: 'Day 2 - Corruption Checksum',
+        value: '02p1'
       }
     ]
   },

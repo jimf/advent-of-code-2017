@@ -1,7 +1,3 @@
-const gen = require('../gen')
-const t = require('../transduce')
-const { head } = require('../util')
-
 /**
  * Day 1 - Inverse Captcha
  *
@@ -9,6 +5,10 @@ const { head } = require('../util')
  * corresponding digit in the list (p1 = next, p2 = half the list over). The
  * list is treated as circular for the purposes of finding the "next" digit.
  */
+
+const gen = require('../gen')
+const t = require('../transduce')
+const { head } = require('../util')
 
 /**
  * Imperative solution. Iterate over the indices of the input, comparing the
@@ -49,7 +49,5 @@ const getNext = {
   2: len => i => (i + (len / 2)) % len
 }
 
-const solve = (part, input) =>
+module.exports = (part, input) =>
   getInverseCaptcha(getNext[part](input.length), input)
-
-module.exports = solve
