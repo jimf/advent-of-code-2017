@@ -1,7 +1,7 @@
 const test = require('tape')
 const solve = require('./')
 
-test('Day 03 - Spiral Memory', t => {
+test(solve.puzzleName, t => {
   t.equal(solve(1, '1'), 0)
   t.equal(solve(1, '12'), 3)
   t.equal(solve(1, '23'), 2)
@@ -10,7 +10,7 @@ test('Day 03 - Spiral Memory', t => {
   t.end()
 })
 
-test('Day 03 - Spiral Memory (part 2)', t => {
+test(`${solve.puzzleName} (part 2)`, t => {
   t.equal(solve(2, '0'), 1)
   t.equal(solve(2, '1'), 2)
   t.equal(solve(2, '2'), 4)

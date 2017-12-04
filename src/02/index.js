@@ -35,3 +35,4 @@ const getRowValue = {
 
 module.exports = (part, input) =>
   getChecksum(getRowValue[part], input)
+module.exports.puzzleName = 'Day 2 - Corruption Checksum'

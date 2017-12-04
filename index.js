@@ -2,7 +2,8 @@ const inquirer = require('inquirer')
 const aocSolutions = {
   '01': require('./src/01'),
   '02': require('./src/02'),
-  '03': require('./src/03')
+  '03': require('./src/03'),
+  '04': require('./src/04')
 }
 
 inquirer.prompt([
@@ -10,20 +11,10 @@ inquirer.prompt([
     type: 'list',
     name: 'day',
     message: 'Which day would you like to solve?',
-    choices: [
-      {
-        name: 'Day 1 - Inverse Captcha',
-        value: '01'
-      },
-      {
-        name: 'Day 2 - Corruption Checksum',
-        value: '02'
-      },
-      {
-        name: 'Day 3 - Spiral Memory',
-        value: '03'
-      }
-    ]
+    choices: Object.keys(aocSolutions).map((key) => ({
+      name: aocSolutions[key].puzzleName,
+      value: key
+    }))
   },
   {
     type: 'list',

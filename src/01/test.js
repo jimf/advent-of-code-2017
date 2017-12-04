@@ -1,7 +1,7 @@
 const test = require('tape')
 const solve = require('./')
 
-test('Day 01 - Inverse Captcha', t => {
+test(solve.puzzleName, t => {
   t.equal(solve(1, '1122'), 3)
   t.equal(solve(1, '1111'), 4)
   t.equal(solve(1, '1234'), 0)
@@ -9,7 +9,7 @@ test('Day 01 - Inverse Captcha', t => {
   t.end()
 })
 
-test('Day 01 - Inverse Captcha (part 2)', t => {
+test(`${solve.puzzleName} (part 2)`, t => {
   t.equal(solve(2, '1212'), 6)
   t.equal(solve(2, '1221'), 0)
   t.equal(solve(2, '123425'), 4)

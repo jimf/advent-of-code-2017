@@ -137,3 +137,4 @@ const solvePart = {
 
 module.exports = (part, input) =>
   solvePart[part](Number(input))
+module.exports.puzzleName = 'Day 3 - Spiral Memory'

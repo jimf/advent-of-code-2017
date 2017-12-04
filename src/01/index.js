@@ -51,3 +51,4 @@ const getNext = {
 
 module.exports = (part, input) =>
   getInverseCaptcha(getNext[part](input.length), input)
+module.exports.puzzleName = 'Day 1 - Inverse Captcha'
