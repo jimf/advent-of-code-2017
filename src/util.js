@@ -13,3 +13,5 @@ exports.combinations = (xs) => {
 exports.compose = (...fns) => x => fns.reduce(B, I)(x)
 
 exports.head = ([x]) => x
+
+exports.sumWith = f => xs => xs.reduce((acc, x) => acc + f(x), 0)

@@ -8,8 +8,8 @@
  * numbers in the row that are evenly divisible with each other.
  */
 
-const { I } = require('../combinators')
-const { combinations } = require('../util')
+const { I, B } = require('../combinators')
+const { combinations, sumWith } = require('../util')
 
 const rowToNumbers = row => row.split(/\s+/g).filter(I).map(Number)
 
@@ -17,10 +17,7 @@ const rowToNumbers = row => row.split(/\s+/g).filter(I).map(Number)
  * Split input into rows, calculate a value for each row, and sum the results.
  */
 const getChecksum = (f, input) =>
-  input
-    .trim()
-    .split('\n')
-    .reduce((acc, row) => acc + f(rowToNumbers(row)), 0)
+  sumWith(B(f, rowToNumbers))(input.trim().split('\n'))
 
 const getRowValue = {
   // Part 1: Difference between max and min.

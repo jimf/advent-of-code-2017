@@ -8,6 +8,7 @@
  */
 
 const { I } = require('../combinators')
+const { sumWith } = require('../util')
 
 const sortChars = word => {
   let chars = word.split('')
@@ -16,12 +17,12 @@ const sortChars = word => {
 }
 
 const countValidPassphrases = (input, useAddedSecurity) =>
-  input.split('\n').reduce((acc, line) => {
+  sumWith(line => {
     // For part 2, no need to worry about enumerating letter combinations. The
     // words can effectively be normalized by sorting the letters once.
     const words = line.split(' ').map(useAddedSecurity ? sortChars : I)
-    return acc + ((new Set(words)).size === words.length ? 1 : 0)
-  }, 0)
+    return (new Set(words)).size === words.length ? 1 : 0
+  })(input.split('\n'))
 
 const solvePart = {
   1: input => countValidPassphrases(input, false),
