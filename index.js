@@ -3,7 +3,9 @@ const aocSolutions = {
   '01': require('./src/01'),
   '02': require('./src/02'),
   '03': require('./src/03'),
-  '04': require('./src/04')
+  '04': require('./src/04'),
+  '05': require('./src/05'),
+  '06': require('./src/06')
 }
 
 inquirer.prompt([
