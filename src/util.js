@@ -14,4 +14,16 @@ exports.compose = (...fns) => x => fns.reduce(B, I)(x)
 
 exports.head = ([x]) => x
 
+exports.max = xs => xs.reduce((acc, x) => x > acc ? x : acc, -Infinity)
+
 exports.sumWith = f => xs => xs.reduce((acc, x) => acc + f(x), 0)
+
+exports.values = (obj) => {
+  const result = []
+  for (let key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      result.push(obj[key])
+    }
+  }
+  return result
+}
