@@ -6,13 +6,7 @@ test(solve.puzzleName, t => {
   t.end()
 })
 
-// test(`${solve.puzzleName} (part 2)`, t => {
-//   t.equal(solve(2, '{<>}'), 0)
-//   t.equal(solve(2, '{<random characters>}'), 17)
-//   t.equal(solve(2, '{<<<<>}'), 3)
-//   t.equal(solve(2, '{<{!>}>}'), 2)
-//   t.equal(solve(2, '{<!!>}'), 0)
-//   t.equal(solve(2, '{<!!!>>}'), 0)
-//   t.equal(solve(2, '{<{o"i!a,<{i<a>}'), 10)
-//   t.end()
-// })
+test(`${solve.puzzleName} (part 2)`, t => {
+  t.equal(solve(2, '230,1,2,221,97,252,168,169,57,99,0,254,181,255,235,167'), '0c2f794b2eb555f7830766bf8fb65a16')
+  t.end()
+})

@@ -4,18 +4,9 @@
  * Hashing functions.
  */
 
-const { flatten } = require('../util')
+const { concatMap, splitEvery } = require('../util')
 
-const splitEvery = (n, xs) => {
-  const result = []
-  for (let i = 0, len = xs.length; i < len; i += 1) {
-    if (i % n === 0) {
-      result.push([])
-    }
-    result[result.length - 1].push(xs[i])
-  }
-  return result
-}
+const xorAll = xs => xs.reduce((x, y) => x ^ y)
 
 const solvePart = {
   1: (input, size = 256) => {
@@ -68,7 +59,7 @@ const solvePart = {
       iterations += 1
     }
 
-    return flatten(splitEvery(size / 16, list).map(block => block.reduce((x, y) => x ^ y)))
+    return concatMap(xorAll, splitEvery(size / 16, list))
       .map(n => ('0' + n.toString(16)).slice(-2))
       .join('')
   }
