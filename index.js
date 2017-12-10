@@ -8,7 +8,8 @@ const aocSolutions = {
   '06': require('./src/06'),
   '07': require('./src/07'),
   '08': require('./src/08'),
-  '09': require('./src/09')
+  '09': require('./src/09'),
+  '10': require('./src/10')
 }
 
 inquirer.prompt([
