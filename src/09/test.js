@@ -1,0 +1,25 @@
+const test = require('tape')
+const solve = require('./')
+
+test(solve.puzzleName, t => {
+  t.equal(solve(1, '{}'), 1)
+  t.equal(solve(1, '{{{}}}'), 6)
+  t.equal(solve(1, '{{},{}}'), 5)
+  t.equal(solve(1, '{{{},{},{{}}}}'), 16)
+  t.equal(solve(1, '{<a>,<a>,<a>,<a>}'), 1)
+  t.equal(solve(1, '{{<ab>},{<ab>},{<ab>},{<ab>}}'), 9)
+  t.equal(solve(1, '{{<!!>},{<!!>},{<!!>},{<!!>}}'), 9)
+  t.equal(solve(1, '{{<a!>},{<a!>},{<a!>},{<ab>}}'), 3)
+  t.end()
+})
+
+test(`${solve.puzzleName} (part 2)`, t => {
+  t.equal(solve(2, '{<>}'), 0)
+  t.equal(solve(2, '{<random characters>}'), 17)
+  t.equal(solve(2, '{<<<<>}'), 3)
+  t.equal(solve(2, '{<{!>}>}'), 2)
+  t.equal(solve(2, '{<!!>}'), 0)
+  t.equal(solve(2, '{<!!!>>}'), 0)
+  t.equal(solve(2, '{<{o"i!a,<{i<a>}'), 10)
+  t.end()
+})
