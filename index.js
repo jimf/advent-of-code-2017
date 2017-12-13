@@ -11,7 +11,8 @@ const aocSolutions = {
   '09': require('./src/09'),
   '10': require('./src/10'),
   '11': require('./src/11'),
-  '12': require('./src/12')
+  '12': require('./src/12'),
+  '13': require('./src/13')
 }
 
 inquirer.prompt([
