@@ -23,6 +23,14 @@ exports.head = ([x]) => x
 
 exports.max = xs => xs.reduce((acc, x) => x > acc ? x : acc, -Infinity)
 
+exports.range = (from, to) => {
+  let result = []
+  for (let i = from; i < to; i += 1) {
+    result.push(i)
+  }
+  return result
+}
+
 exports.splitEvery = (n, xs) => {
   const result = []
   for (let i = 0, len = xs.length; i < len; i += 1) {
