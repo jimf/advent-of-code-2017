@@ -21,6 +21,14 @@ exports.concatMap = (f, xs) =>
 
 exports.head = ([x]) => x
 
+exports.pad = c => width => s => {
+  let result = s
+  while (result.length < width) {
+    result = c + result
+  }
+  return result
+}
+
 exports.max = xs => xs.reduce((acc, x) => x > acc ? x : acc, -Infinity)
 
 exports.range = (from, to) => {
@@ -42,7 +50,13 @@ exports.splitEvery = (n, xs) => {
   return result
 }
 
-exports.sumWith = f => xs => xs.reduce((acc, x) => acc + f(x), 0)
+exports.sumWith = f => xs => {
+  let acc = 0
+  for (let x of xs) {
+    acc = acc + f(x)
+  }
+  return acc
+}
 
 exports.values = (obj) => {
   const result = []
