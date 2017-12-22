@@ -84,5 +84,5 @@ const solvePart = {
 }
 
 module.exports = (part, input, n = 1000) =>
-  solvePart[part](input.trim().split('\n').map(parseLine))
+  solvePart[part](input.trim().split('\n').map(parseLine), n)
 module.exports.puzzleName = 'Day 20 - Particle Swarm'
