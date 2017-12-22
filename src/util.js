@@ -21,6 +21,8 @@ exports.concatMap = (f, xs) =>
 
 exports.head = ([x]) => x
 
+exports.flatten = xs => [].concat.apply([], xs)
+
 exports.pad = c => width => s => {
   let result = s
   while (result.length < width) {

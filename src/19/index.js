@@ -4,6 +4,8 @@
  * Path following.
  */
 
+const { flatten } = require('../util')
+
 const isLetter = c => /[A-Z]/.test(c)
 const isEmpty = c => c === null || c === ' '
 
@@ -87,7 +89,7 @@ const solvePath = (lines) => {
 
   if (solve(0, lines[0].indexOf('|'), 'down')) {
     path.reverse()
-    return [].concat.apply([], path)
+    return flatten(path)
   }
 }
 
