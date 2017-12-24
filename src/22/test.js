@@ -7,18 +7,11 @@ const input = `
 ...`.trim()
 
 test(solve.puzzleName, t => {
-  t.equal(solve(1, input, 2), 12)
+  t.equal(solve(1, input, 70), 41)
   t.end()
 })
 
-// test(`${solve.puzzleName} (part 2)`, t => {
-//   const input = `
-// p=<-6,0,0>, v=< 3,0,0>, a=< 0,0,0>
-// p=<-4,0,0>, v=< 2,0,0>, a=< 0,0,0>
-// p=<-2,0,0>, v=< 1,0,0>, a=< 0,0,0>
-// p=< 3,0,0>, v=<-1,0,0>, a=< 0,0,0>
-// `.trim()
-
-//   t.equal(solve(2, input), 1)
-//   t.end()
-// })
+test(`${solve.puzzleName} (part 2)`, t => {
+  t.equal(solve(2, input, 100), 26)
+  t.end()
+})
