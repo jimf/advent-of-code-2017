@@ -33,6 +33,12 @@ exports.pad = c => width => s => {
 
 exports.max = xs => xs.reduce((acc, x) => x > acc ? x : acc, -Infinity)
 
+exports.maxWith = f => xs =>
+  xs.reduce((acc, x) => {
+    const result = f(x)
+    return acc > result ? acc : result
+  }, -Infinity)
+
 exports.range = (from, to) => {
   let result = []
   for (let i = from; i < to; i += 1) {
